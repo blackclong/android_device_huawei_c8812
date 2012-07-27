@@ -40,7 +40,7 @@ PRODUCT_PACKAGES += \
 # Camera
 #PRODUCT_PACKAGES += \
 #        camera.msm7627a
-        
+
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory 

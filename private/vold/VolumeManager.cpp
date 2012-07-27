@@ -933,6 +933,7 @@ static const char *LUN_FILES[] = {
 int VolumeManager::openLun(int number) {
     const char **iterator = LUN_FILES;
     char qualified_lun[255];
+	SLOGD("NUMBER == %d",number);
     while (*iterator) {
         bzero(qualified_lun, 255);
         snprintf(qualified_lun, 254, *iterator, number);

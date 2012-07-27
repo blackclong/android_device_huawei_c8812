@@ -861,7 +861,7 @@ service dbus /system/bin/dbus-daemon --system --nofork
     class main
     socket dbus stream 660 bluetooth bluetooth
     user bluetooth
-    group bluetooth net_bt_admin
+    group bluetooth net_bt_admin qcom_oncrpc
 
 #/* < DTS2012020604357 zhangyun 20120206 begin */
 #//delete bluetoothd
@@ -1039,7 +1039,7 @@ service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -d -n
     socket dbus_bluetooth stream 660 bluetooth bluetooth
 # init.rc does not yet support applying capabilities, so run as root and
 # let bluetoothd drop uid to bluetooth with the right linux capabilities
-    group bluetooth net_bt_admin misc
+    group bluetooth net_bt_admin misc qcom_oncrpc
     disabled
 #/* DTS2012020604357 zhangyun 20120206 end > */
     
