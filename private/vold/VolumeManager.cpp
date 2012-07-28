@@ -923,20 +923,19 @@ static const char *LUN_FILES[] = {
 #ifdef CUSTOM_LUN_FILE
     CUSTOM_LUN_FILE,
 #endif
-	"/sys/class/android_usb/android0/f_mass_storage/lun1/file"
     /* Only andriod0 exists, but the %d in there is a hack to satisfy the
        format string and also give a not found error when %d > 0 */
-    "/sys/class/android_usb/android%d/f_mass_storage/lun/file",
+    "/sys/class/android_usb/android0/f_mass_storage/lun%d/file",
     NULL
 };
 
 int VolumeManager::openLun(int number) {
     const char **iterator = LUN_FILES;
     char qualified_lun[255];
-	SLOGD("NUMBER == %d",number);
     while (*iterator) {
         bzero(qualified_lun, 255);
         snprintf(qualified_lun, 254, *iterator, number);
+		// SLOGI("LunPath == %s ",qualified_lun);
         int fd = open(qualified_lun, O_WRONLY);
         if (fd >= 0) {
             SLOGD("Opened lunfile %s", qualified_lun);
@@ -1012,8 +1011,11 @@ int VolumeManager::shareVolume(const char *label, const char *method) {
     // TODO: Currently only two mounts are supported, defaulting
     // /mnt/sdcard to lun0 and anything else to lun1. Fix this.
     if (v->isPrimaryStorage()) {
+		// SLOGD("PRIMARY!!!");
         lun_number = 0;
     } else {
+	//	SLOGD("HAVE SECOND LUN");
+	//	SLOGE("	current sencond_lun_num == %d ",SECOND_LUN_NUM);
         lun_number = SECOND_LUN_NUM;
     }
 
