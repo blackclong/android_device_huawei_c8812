@@ -8,12 +8,13 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/c8812/overlay
 PRODUCT_LOCALES += hdpi
 #PRODUCT_LOCALES := zh_CN zh_TW en_US
 
-# Video decoding
 PRODUCT_PACKAGES += \
-    libstagefrighthw \
-    libmm-omxcore \
     libOmxCore \
-#    Torch
+    libOmxVenc \
+    libOmxVdec \
+    libmm-omxcore \
+    libdivxdrmdecrypt \
+    libstagefrighthw
     
 # Graphics 
 PRODUCT_PACKAGES += \
