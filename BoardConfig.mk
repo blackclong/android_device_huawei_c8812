@@ -123,10 +123,7 @@ BOARD_HAS_NO_MISC_PARTITION := true
 #BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/c8812/recovery/graphics.c
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/huawei/c8812/recovery/recovery_ui.c
 
-TARGET_CUSTOM_VOLD := ../../device/huawei/c8812/private/vold/VolumeManager.cpp
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 TARGET_USE_CUSTOM_SECOND_LUN_NUM := 1
 BOARD_VOLD_MAX_PARTITIONS := 19
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-#BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
