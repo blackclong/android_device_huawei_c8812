@@ -99,8 +99,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Kernel 
 #ENABLE_BCM_4330 := true
 #BT_BCM_VER_3 := true
-#TARGET_KERNEL_SOURCE := kernel/huawei/c8812
-#TARGET_KERNEL_CONFIG := cyanogen_c8812_defconfig
+#TARGET_KERNEL_SOURCE := kernel/huawei/G300
+#TARGET_KERNEL_CONFIG := c8812_defconfig
 TARGET_PREBUILT_KERNEL := device/huawei/c8812/kernel
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_KERNEL_BASE := 0x00200000
