@@ -78,18 +78,19 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/ueventd.huawei.rc:root/ueventd.huawei.rc \
     device/huawei/c8812/prebuilt/init.qcom.sh:root/init.qcom.sh \
     device/huawei/c8812/prebuilt/init.huawei.usb.rc:root/init.huawei.usb.rc \
-    device/huawei/c8812/prebuilt/adbd:root/adbd \
-    device/huawei/c8812/prebuilt/init:root/init \
-    device/huawei/c8812/prebuilt/init.goldfish.rc:root/init.goldfish.rc \
-    device/huawei/c8812/prebuilt/init.huawei.rc:root/init.huawei.rc \
-    device/huawei/c8812/prebuilt/init.msm7627a.rc:root/init.msm7627a.rc \
-    device/huawei/c8812/prebuilt/init.msm7630.rc:root/init.msm7630.rc \
-    device/huawei/c8812/prebuilt/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    device/huawei/c8812/prebuilt/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    device/huawei/c8812/prebuilt/init.rc:root/init.rc \
     device/huawei/c8812/prebuilt/init.target.rc:root/init.target.rc \
-	device/huawei/c8812/prebuilt/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
-	device/huawei/c8812/prebuilt/ueventd.rc:root/ueventd.rc
+    device/huawei/c8812/prebuilt/init.msm7627a.rc:root/init.msm7627a.rc \
+    device/huawei/c8812/prebuilt/init.rc:root/init.rc \
+    device/huawei/c8812/prebuilt/ueventd.rc:root/ueventd.rc
+#    device/huawei/c8812/prebuilt/adbd:root/adbd \
+#    device/huawei/c8812/prebuilt/init:root/init \
+#    device/huawei/c8812/prebuilt/init.goldfish.rc:root/init.goldfish.rc \
+#    device/huawei/c8812/prebuilt/init.msm7630.rc:root/init.msm7630.rc \
+#    device/huawei/c8812/prebuilt/init.qcom.usb.rc:root/init.qcom.usb.rc \
+#    device/huawei/c8812/prebuilt/init.qcom.usb.sh:root/init.qcom.usb.sh \
+#    
+#	device/huawei/c8812/prebuilt/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
+	
 
 PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/wifi/dhd_4330.ko:system/wifi/dhd_4330.ko \

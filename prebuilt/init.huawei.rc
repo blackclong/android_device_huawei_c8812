@@ -1,4 +1,4 @@
-
+import init.huawei.usb.rc
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
