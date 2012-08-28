@@ -53,7 +53,7 @@ extern void huawei_oem_rapi_streaming_function(int n, int p1, int p2, int p3, ch
 static char iface[PROPERTY_VALUE_MAX];
 // TODO: use new ANDROID_SOCKET mechanism, once support for multiple
 // sockets is in
-
+#define WIFI_DRIVER_LOADER_DELAY    1000000
 #ifndef WIFI_DRIVER_MODULE_ARG
 #define WIFI_DRIVER_MODULE_ARG          ""
 #endif
@@ -762,7 +762,6 @@ int wifi_start_supplicant_common(const char *config_file)
 
 int wifi_start_supplicant()
 {
-	//LOGD("k0:	wifi_start_supplicant");
     return wifi_start_supplicant_common(SUPP_CONFIG_FILE);
 }
 
@@ -773,7 +772,6 @@ int wifi_start_p2p_supplicant()
 
 int wifi_stop_supplicant()
 {
-	//	LOGD("k0:	wifi_stop_supplicant");
     char supp_status[PROPERTY_VALUE_MAX] = {'\0'};
     int count = 50; /* wait at most 5 seconds for completion */
 
