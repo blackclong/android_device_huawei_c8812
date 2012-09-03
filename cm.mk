@@ -1,17 +1,17 @@
 # Correct bootanimation size for the screen
-#TARGET_BOOTANIMATION_NAME := vertical-480x800
+TARGET_BOOTANIMATION_NAME := vertical-480x800
 
 # Inherit device configuration
 $(call inherit-product, device/huawei/c8812/c8812.mk)
 
 # Inherit some common CM stuff.
-#$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 
 # Inherit some common CM stuff.
-#$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Setup device configuration
-PRODUCT_NAME := aokp_c8812
+PRODUCT_NAME := cm_c8812
 PRODUCT_DEVICE := c8812
 PRODUCT_BRAND := Huawei
 PRODUCT_MODEL := HUAWEI C8812

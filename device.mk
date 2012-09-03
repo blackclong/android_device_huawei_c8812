@@ -190,11 +190,11 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/lib/modules/xc5000.ko:system/lib/modules/xc5000.ko
 
 PRODUCT_COPY_FILES += \
-    vendor/aokp/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/cm/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_NAME := aokp_c8812
+PRODUCT_NAME := cm_c8812
 PRODUCT_DEVICE := c8812
 PRODUCT_BRAND := huawei
 
