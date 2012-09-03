@@ -53,7 +53,7 @@ extern void huawei_oem_rapi_streaming_function(int n, int p1, int p2, int p3, ch
 static char iface[PROPERTY_VALUE_MAX];
 // TODO: use new ANDROID_SOCKET mechanism, once support for multiple
 // sockets is in
-#define WIFI_DRIVER_LOADER_DELAY    1000000
+
 #ifndef WIFI_DRIVER_MODULE_ARG
 #define WIFI_DRIVER_MODULE_ARG          ""
 #endif
@@ -149,6 +149,9 @@ char* get_samsung_wifi_type()
 
     if (strncmp(buf, "semcove", 7) == 0)
         return "_semcove";
+
+    if (strncmp(buf, "semcosh", 7) == 0)
+        return "_semcosh";
 
     return NULL;
 }
@@ -700,7 +703,6 @@ int wifi_start_supplicant_common(const char *config_file)
     /* if service is running, then return 0*/
     if (property_get(SUPP_PROP_NAME, supp_status, NULL)
             && strcmp(supp_status, "running") == 0) {
-        LOGD("service %s is running now",SUPP_PROP_NAME);
         return 0;
     }
 
