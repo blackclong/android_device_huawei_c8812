@@ -8,7 +8,7 @@ $(call inherit-product, device/huawei/c8812/c8812.mk)
 $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/cm/config/cdma.mk)
 
 # Setup device configuration
 PRODUCT_NAME := cm_c8812
