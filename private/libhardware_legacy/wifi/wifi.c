@@ -53,7 +53,7 @@ extern void huawei_oem_rapi_streaming_function(int n, int p1, int p2, int p3, ch
 static char iface[PROPERTY_VALUE_MAX];
 // TODO: use new ANDROID_SOCKET mechanism, once support for multiple
 // sockets is in
-
+#define WIFI_DRIVER_LOADER_DELAY 1000000
 #ifndef WIFI_DRIVER_MODULE_ARG
 #define WIFI_DRIVER_MODULE_ARG          ""
 #endif
