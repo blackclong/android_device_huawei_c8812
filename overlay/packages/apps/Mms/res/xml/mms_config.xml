@@ -14,15 +14,20 @@
      limitations under the License.
 -->
 
-<!-- Saga-specific phone app resources. -->
-<resources>
+<!-- Version History
+        version 1 - initial version.
+        version 2 - added recipientLimit.
+        version 3 - added min/max recycler values.
+        version 4 - added sms to mms text threshold.
+-->
 
-    <!-- Determine whether calls to mute the microphone in PhoneUtils
-                           are routed through the android.media.AudioManager class (true) or through
-         the com.android.internal.telephony.Phone interface (false). -->
-    <bool name="send_mic_mute_to_AudioManager">true</bool>
+<mms_config version="4">
+    <!-- Maximum message size in bytes for a MMS message -->
+    <int name="maxMessageSize">307200</int>
 
-    <!-- Enable the onscreen "Dial" button in the emergency dialer. -->
-    <bool name="config_show_onscreen_dial_button">true</bool>
+    <!-- Maximum height for an attached image -->
+    <int name="maxImageHeight">768</int>
 
-</resources>
+    <!-- Maximum width for an attached image -->
+    <int name="maxImageWidth">1024</int>
+</mms_config>
