@@ -132,7 +132,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/lib/libOpenVG.so:system/lib/libOpenVG.so \
     device/huawei/c8812/prebuilt/system/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
     device/huawei/c8812/prebuilt/system/lib/libgsl.so:system/lib/libgsl.so \
-    device/huawei/c8812/prebuilt/system/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko \
     device/huawei/c8812/prebuilt/system/lib/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
     device/huawei/c8812/prebuilt/system/lib/modules/dal_remotetest.ko:system/lib/modules/dal_remotetest.ko \
     device/huawei/c8812/prebuilt/system/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
