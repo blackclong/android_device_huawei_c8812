@@ -24,5 +24,5 @@ for different hardware and product builds. -->
     <bool name="needsEarlyVideoSize">true</bool>
     <!-- The camera removes the focus modes by default when touch-to-focus
 exists. Use this option to change that behavior -->
-    <bool name="wantsFocusModes">true</bool>
+    <bool name="wantsFocusModes">false</bool>
 </resources>

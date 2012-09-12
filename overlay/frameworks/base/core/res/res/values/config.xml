@@ -107,10 +107,13 @@
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>41</item>
+	<item>55</item>
         <item>61</item>
         <item>81</item>
+	<item>100</item>
         <item>112</item>
         <item>163</item>
+	<item>198</item>
         <item>231</item>
         <item>255</item>
     </integer-array>
@@ -121,6 +124,9 @@
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
         <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
