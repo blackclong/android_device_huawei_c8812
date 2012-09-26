@@ -1,6 +1,6 @@
 on early-init
 # Set init and its forked children's oom_adj.
-    write /proc/1/oom_adj -16
+    write /proc/1/oom_score_adj -16
 
     start ueventd
 
@@ -566,11 +566,11 @@ service dbus /system/bin/dbus-daemon --system --nofork
     user bluetooth
     group bluetooth net_bt_admin qcom_oncrpc
 
-service wlan_detect /system/bin/wlan_detect
-    class main
-    user root
-    group root
-    oneshot
+#service wlan_detect /system/bin/wlan_detect
+#    class main
+#    user root
+#    group root
+#    oneshot
 
 #service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -W -c/data/misc/wifi/wpa_supplicant.conf
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -ieth0 -puse_p2p_group_interface=1 -W -c/data/misc/wifi/wpa_supplicant.conf
@@ -630,9 +630,9 @@ on property:service.iq.active=0
     stop iqmsd
 
 # START HUAWEI RPC SERVICE
-service test_diag /system/bin/test_diag
-    class core
-    oneshot      
+#service test_diag /system/bin/test_diag
+#    class core
+#    oneshot      
 
 service oem_rpc_svc /system/bin/oem_rpc_svc
     class core
@@ -735,17 +735,17 @@ on property:ro.emmc=1
 service PTTKeyDaemon /system/bin/PTTKeyDaemon 
     oneshot
 
-service callife /system/bin/callife
-    class core
-    oneshot
+#service callife /system/bin/callife
+#    class core
+#    oneshot
 
-service filebackup /system/bin/filebackup
-    class core
-    socket filebackup stream 0600 radio system
+#service filebackup /system/bin/filebackup
+#    class core
+#    socket filebackup stream 0600 radio system
 
-service filebackup /system/bin/filebackup
-    class main
-    socket filebackup stream 0600 radio system
+#service filebackup /system/bin/filebackup
+#    class main
+#    socket filebackup stream 0600 radio system
 
 chmod 0755  /etc/ppp/ip-up-ppp
 chmod 0755  /system/xbin/cplusw
