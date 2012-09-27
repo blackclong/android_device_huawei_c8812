@@ -26,7 +26,7 @@ persist.sys.usb.config=mass_storage,adb
 persist.service.adb.enable=1
 
 # System
-dalvik.vm.heapsize=48m
+dalvik.vm.heapsize=64m
 dalvik.vm.dexopt-data-only=1
 
 # hold precise GC data, and use SMP
@@ -34,7 +34,7 @@ dalvik.vm.dexopt-flags=m=y,u=n
 
 # Mount the internal SD card, too
 ro.additionalmounts=/mnt/emmc
-ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc 
+ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 ro.emmc.sdcard.partition=19
 
 persist.sys.use_dithering=1
