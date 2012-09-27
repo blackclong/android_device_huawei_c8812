@@ -50,10 +50,10 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory 
 
 PRODUCT_PROPERTY_OVERRIDES += \
-       dalvik.vm.heapstartsize=5m \
-       dalvik.vm.heapgrowthlimit=36m \
-       dalvik.vm.heapsize=128m
-
+	dalvik.vm.heapstartsize=5m \
+	dalvik.vm.heapgrowthlimit=36m \
+	dalvik.vm.heapsize=128m
+	
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
