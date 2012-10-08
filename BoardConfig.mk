@@ -40,6 +40,8 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := c8812
 
 TARGET_SPECIFIC_HEADER_PATH := device/huawei/c8812/include
 
+BOARD_NEEDS_MEMORYHEAPPMEM := true
+
 # OpenGL drivers config file path
 BOARD_EGL_CFG := device/huawei/c8812/prebuilt/system/lib/egl/egl.cfg
 BOARD_USES_QCOM_HARDWARE := true
@@ -51,6 +53,7 @@ TARGET_GRALLOC_USES_ASHMEM := true
 COMMON_GLOBAL_CFLAGS += -DTARGET_MSM7x27A
 #COMMON_GLOBAL_CFLAGS += -D7627A
 TARGET_USES_OVERLAY := true
+TARGET_NO_HW_VSYNC := true
 
 #TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 DCHECK_FOR_EXTERNAL_FORMAT := true
@@ -65,17 +68,17 @@ BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
 #COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE
 COMMON_GLOBAL_CFLAGS += -DHAVE_ARM_TLS_REGISTER
 
-WITH_JIT := true
-ENABLE_JSC_JIT := true
-JS_ENGINE := v8
-HTTP := chrome
+#WITH_JIT := true
+#ENABLE_JSC_JIT := true
+#JS_ENGINE := v8
+#HTTP := chrome
 ENABLE_WEBGL = true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
+#BOARD_PROVIDES_LIBRIL := true
 
 # Wi-Fi
 WIFI_BAND := 802_11_ABG
@@ -94,7 +97,7 @@ WIFI_DRIVER_FW_PATH_STA     := "/system/wifi/fw_4330_b2.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/wifi/fw_4330_b2.bin"
 #WIFI_DRIVER_FW_PATH_P2P     := "/system/wifi/fw_4330_b2.bin"
 
-TARGET_CUSTOM_WIFI := ../../device/huawei/c8812/private/libhardware_legacy/wifi/wifi.c
+#TARGET_CUSTOM_WIFI := ../../device/huawei/c8812/private/libhardware_legacy/wifi/wifi.c
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00C00000
@@ -104,9 +107,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 183500800
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel 
-TARGET_KERNEL_SOURCE := kernel/huawei/G300
-TARGET_KERNEL_CONFIG := c8812_defconfig
-#TARGET_PREBUILT_KERNEL := device/huawei/c8812/kernel
+#TARGET_KERNEL_SOURCE := kernel/huawei/G300
+#TARGET_KERNEL_CONFIG := c8812_defconfig
+TARGET_PREBUILT_KERNEL := device/huawei/c8812/kernel
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_PAGE_SIZE := 2048
