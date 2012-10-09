@@ -26,7 +26,14 @@ PRODUCT_PACKAGES += \
 	liboverlay \
     libgenlock \
     libmemalloc \
-	libI420colorconvert
+	libI420colorconvert \
+	libhwcexternal \
+	libhwcservice \
+	libqdutils \
+	mm-vdec-omx-test \
+	mm-video-driver-test \
+	mm-venc-omx-test720p \
+	mm-video-encdrv-test
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.msm7627a \
@@ -38,6 +45,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     dexpreopt \
     gps.c8812 \
+    libloc_api-rpc \
     Camera
 
 # Filesystem management tools
