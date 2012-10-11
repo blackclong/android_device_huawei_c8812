@@ -20,6 +20,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gralloc.msm7627a \
     copybit.msm7627a \
+	lights.msm7627a \
     hwcomposer.msm7627a \
     libtilerenderer \
     libQcomUI \

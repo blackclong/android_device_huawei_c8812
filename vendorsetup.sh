@@ -1,2 +1,3 @@
 add_lunch_combo huawei_c8812-userdebug
-add_lunch_combo cm_c8812-userdebug
+#add_lunch_combo cm_c8812-userdebug
+add_lunch_combo cm_c8812-eng
