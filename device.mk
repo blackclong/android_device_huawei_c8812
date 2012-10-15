@@ -37,10 +37,8 @@ PRODUCT_PACKAGES += \
 	mm-video-encdrv-test
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm7627a \
-    audio_policy.msm7627a \
-    audio.a2dp.default \
-    libaudioutils
+	audio.primary.msm7627a \
+	audio_policy.conf
 
 # Other
 PRODUCT_PACKAGES += \
@@ -82,6 +80,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/init.msm7627a.rc:root/init.msm7627a.rc
 
 PRODUCT_COPY_FILES += \
+	device/huawei/c8812/cfg80211.ko:system/lib/modules/cfg80211.ko \
     device/huawei/c8812/prebuilt/system/wifi/dhd_4330.ko:system/wifi/dhd_4330.ko \
     device/huawei/c8812/prebuilt/system/wifi/fw_4330_b2.bin:system/wifi/fw_4330_b2.bin \
     device/huawei/c8812/prebuilt/system/wifi/nvram_4330.txt:system/wifi/nvram_4330.txt \

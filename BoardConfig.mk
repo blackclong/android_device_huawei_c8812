@@ -27,12 +27,7 @@ TARGET_CORTEX_CACHE_LINE_32 := true
 TARGET_USE_SPARROW_BIONIC_OPTIMIZATION := true
 
 # Audio
-#BOARD_PROVIDES_LIBAUDIO := true
-BOARD_USES_AUDIO_LEGACY := false
 TARGET_USES_QCOM_LPA := true
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-#TARGET_PROVIDES_LIBLIGHTS := true
-
 TARGET_PROVIDES_LIBLIGHTS := true
 
 # GPS
@@ -98,6 +93,8 @@ BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE := bcmdhd
 
+WIFI_EXT_MODULE_PATH		:= "system/lib/modules/cfg80211.ko"
+WIFI_EXT_MODULE_NAME		:= "cfg80211"
 WIFI_DRIVER_MODULE_PATH     := "/system/wifi/dhd_4330.ko"
 WIFI_DRIVER_MODULE_NAME     := "dhd"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/wifi/fw_4330_b2.bin nvram_path=/system/wifi/nvram_4330.txt"
