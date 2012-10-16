@@ -84,8 +84,9 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/wifi/dhd_4330.ko:system/wifi/dhd_4330.ko \
     device/huawei/c8812/prebuilt/system/wifi/fw_4330_b2.bin:system/wifi/fw_4330_b2.bin \
     device/huawei/c8812/prebuilt/system/wifi/nvram_4330.txt:system/wifi/nvram_4330.txt \
-    device/huawei/c8812/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-    
+    device/huawei/c8812/prebuilt/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/huawei/c8812/audio_policy.conf:system/etc/audio_policy.conf
+
 PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/etc/bluetooth/BCM4330.hcd:system/etc/bluetooth/BCM4330.hcd \
     device/huawei/c8812/prebuilt/system/etc/bluetooth/BCM4329.hcd:system/etc/bluetooth/BCM4329.hcd \
