@@ -1,17 +1,26 @@
 import init.huawei.usb.rc
 
 on init
-    mkdir /cust
-    mkdir /storage 0775 system sdcard_r
-    mkdir /storage/sdcard1 0000 system system
-    mkdir /storage/sdcard0 0000 system system
-    mkdir /HWUserData 0000 system system
-    export EXTERNAL_STORAGE /storage/sdcard1
+#    mkdir /cust
+#    mkdir /storage 0775 system sdcard_r
+#    mkdir /storage/sdcard1 0000 system system
+#    mkdir /storage/sdcard0 0000 system system
+#    mkdir /HWUserData 0000 system system
+#    export EXTERNAL_STORAGE /storage/sdcard1
 
-    symlink /storage/sdcard1 /mnt/sdcard
-    symlink /storage/sdcard1 /sdcard
-    symlink /storage/sdcard0 /mnt/emmc
-    symlink /storage/sdcard0 /HWUserData
+#    symlink /storage/sdcard1 /mnt/sdcard
+#    symlink /storage/sdcard1 /sdcard
+#    symlink /storage/sdcard0 /mnt/emmc
+#    symlink /storage/sdcard0 /HWUserData
+	mkdir /cust
+	mkdir /mnt 0755 system sdcard_r
+	mkdir /mnt/sdcard 0000 system system
+	mkdir /mnt/emmc 0000 system system
+	
+	export EXTERNAL_STORAGE /mnt/sdcard
+	
+	symlink /mnt/emmc	/mnt/sdcard/internal_sd
+	symlink /mnt/sdcard /sdcard
 
 on boot
     exec system/bin/btnvtool -O

@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
 # Other
 PRODUCT_PACKAGES += \
     dexpreopt \
-    gps.c8812 \
+    gps.msm7627a \
     libloc_api-rpc \
     Camera
 
