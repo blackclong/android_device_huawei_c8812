@@ -46,6 +46,3 @@ ro.telephony.call_ring.delay=3000
 ro.config.camera.afctl.enable=true
 
 keyguard.no_require_sim=true
-ro.confg.hw_appsbootversion=C8812VSHENDUOS_APPSBOOT
-ro.confg.hw_appversion=C8812VSHENDUOS_KERNEL
-ro.confg.hw_appfsversion=C8812VSHENDUOS_SYSIMG

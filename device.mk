@@ -37,8 +37,9 @@ PRODUCT_PACKAGES += \
 	mm-video-encdrv-test
 # Audio
 PRODUCT_PACKAGES += \
-	audio.primary.msm7627a \
-	audio_policy.conf
+    audio.primary.msm7627a \
+    audio.a2dp.default \
+    libaudioutils
 
 # Other
 PRODUCT_PACKAGES += \
