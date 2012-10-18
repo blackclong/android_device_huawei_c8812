@@ -110,6 +110,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
     device/huawei/c8812/prebuilt/system/etc/vold.fstab:system/etc/vold.fstab \
     device/huawei/c8812/mediaprofiles/media_profiles.xml:system/etc/media_profiles.xml \
+	device/huawei/c8812/media_codecs.xml:system/etc/media_codecs.xml \
     device/huawei/c8812/prebuilt/system/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
 
 PRODUCT_COPY_FILES += \

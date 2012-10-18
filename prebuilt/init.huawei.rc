@@ -19,7 +19,6 @@ on init
 	
 	export EXTERNAL_STORAGE /mnt/sdcard
 	
-	symlink /mnt/emmc	/mnt/sdcard/internal_sd
 	symlink /mnt/sdcard /sdcard
 
 on boot
