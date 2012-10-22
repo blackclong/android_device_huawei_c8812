@@ -38,6 +38,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.msm7627a \
+	audio_policy.msm7627a \
     audio.a2dp.default \
     libaudioutils
 
@@ -56,6 +57,11 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory 
+
+# iptables
+PRODUCT_PACKAGES += \
+	iptables \
+	ip6tables
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
