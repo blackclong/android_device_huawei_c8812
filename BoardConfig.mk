@@ -107,6 +107,7 @@ WIFI_DRIVER_FW_PATH_STA     := "/system/wifi/fw_4330_b2.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/wifi/fw_4330_b2.bin"
 #WIFI_DRIVER_FW_PATH_P2P     := "/system/wifi/fw_4330_b2.bin"
 
+#TARGET_CUSTOM_WIFI := ../../device/huawei/c8812/wifi.c
 #TARGET_CUSTOM_WIFI := ../../device/huawei/c8812/private/libhardware_legacy/wifi/wifi.c
 
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -117,9 +118,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 183500800
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel 
-#TARGET_KERNEL_SOURCE := kernel/huawei/G300
+TARGET_KERNEL_SOURCE := kernel/huawei/G300
 TARGET_KERNEL_CONFIG := c8812_defconfig
-TARGET_PREBUILT_KERNEL := device/huawei/c8812/kernel
+#TARGET_PREBUILT_KERNEL := device/huawei/c8812/kernel
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_PAGE_SIZE := 2048
