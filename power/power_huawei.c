@@ -19,14 +19,13 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#define LOG_TAG "C8812 PowerHAL"
+#define LOG_TAG "Huawei PowerHAL"
 #include <utils/Log.h>
 
 #include <hardware/hardware.h>
 #include <hardware/power.h>
 
 #define SCALINGMAXFREQ_PATH "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"
-//#define SCREENOFFMAXFREQ_PATH "/sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq"
 #define BOOSTPULSE_PATH "/sys/devices/system/cpu/cpufreq/interactive/boostpulse"
 
 #define MAX_BUF_SZ  10
@@ -34,7 +33,7 @@
 /* initialize to something safe */
 
 
-struct c8812_power_module {
+struct huawei_power_module {
     struct power_module base;
     pthread_mutex_t lock;
     int boostpulse_fd;
@@ -79,11 +78,11 @@ int sysfs_read(const char *path, char *buf, size_t size)
   return len;
 }
 
-static void c8812_power_init(struct power_module *module)
+static void huawei_power_init(struct power_module *module)
 {
     /*
      * cpufreq interactive governor: timer 20ms, min sample 60ms,
-     * hispeed 700MHz at load 50%.
+     * hispeed 600MHz at load 50%.
      */
 
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/timer_rate",
@@ -100,29 +99,29 @@ static void c8812_power_init(struct power_module *module)
                 "1");
 }
 
-static int boostpulse_open(struct c8812_power_module *c8812)
+static int boostpulse_open(struct huawei_power_module *huawei)
 {
     char buf[80];
 
-    pthread_mutex_lock(&c8812->lock);
+    pthread_mutex_lock(&huawei->lock);
 
-    if (c8812->boostpulse_fd < 0) {
-        c8812->boostpulse_fd = open(BOOSTPULSE_PATH, O_WRONLY);
+    if (huawei->boostpulse_fd < 0) {
+        huawei->boostpulse_fd = open(BOOSTPULSE_PATH, O_WRONLY);
 
-        if (c8812->boostpulse_fd < 0) {
-            if (!c8812->boostpulse_warned) {
+        if (huawei->boostpulse_fd < 0) {
+            if (!huawei->boostpulse_warned) {
                 strerror_r(errno, buf, sizeof(buf));
                 ALOGE("Error opening %s: %s\n", BOOSTPULSE_PATH, buf);
-                c8812->boostpulse_warned = 1;
+                huawei->boostpulse_warned = 1;
             }
         }
     }
 
-    pthread_mutex_unlock(&c8812->lock);
-    return c8812->boostpulse_fd;
+    pthread_mutex_unlock(&huawei->lock);
+    return huawei->boostpulse_fd;
 }
 
-static void c8812_power_set_interactive(struct power_module *module, int on)
+static void huawei_power_set_interactive(struct power_module *module, int on)
 {
     /*
      * Lower maximum frequency when screen is off.  
@@ -133,17 +132,17 @@ static void c8812_power_set_interactive(struct power_module *module, int on)
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/input_boost", on? "1" : "0");
 }
 
-static void c8812_power_hint(struct power_module *module, power_hint_t hint,
+static void huawei_power_hint(struct power_module *module, power_hint_t hint,
                             void *data)
 {
-    struct c8812_power_module *c8812 = (struct c8812_power_module *) module;
+    struct huawei_power_module *huawei = (struct huawei_power_module *) module;
     char buf[80];
     int len;
 
     switch (hint) {
     case POWER_HINT_INTERACTION:
-        if (boostpulse_open(c8812) >= 0) {
-	    len = write(c8812->boostpulse_fd, "1", 1);
+        if (boostpulse_open(huawei) >= 0) {
+	    len = write(huawei->boostpulse_fd, "1", 1);
 
 	    if (len < 0) {
 	        strerror_r(errno, buf, sizeof(buf));
@@ -164,21 +163,21 @@ static struct hw_module_methods_t power_module_methods = {
     .open = NULL,
 };
 
-struct c8812_power_module HAL_MODULE_INFO_SYM = {
+struct huawei_power_module HAL_MODULE_INFO_SYM = {
     base: {
         common: {
             tag: HARDWARE_MODULE_TAG,
             module_api_version: POWER_MODULE_API_VERSION_0_2,
             hal_api_version: HARDWARE_HAL_API_VERSION,
             id: POWER_HARDWARE_MODULE_ID,
-            name: "C8812 Power HAL",
+            name: "Huawei Power HAL",
             author: "The Android Open Source Project",
             methods: &power_module_methods,
         },
 
-       init: c8812_power_init,
-       setInteractive: c8812_power_set_interactive,
-       powerHint: c8812_power_hint,
+       init: huawei_power_init,
+       setInteractive: huawei_power_set_interactive,
+       powerHint: huawei_power_hint,
     },
 
     lock: PTHREAD_MUTEX_INITIALIZER,

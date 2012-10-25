@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-	power.c8812
+	power.huawei
 
 # Other
 PRODUCT_PACKAGES += \

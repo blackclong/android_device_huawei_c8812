@@ -187,6 +187,11 @@ on post-fs-data
     chmod 0660 /sys/class/android_usb/android0/f_mass_storage/lun/file
     chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
     chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
+	
+	chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/boost_factor 
+	chown system system /sys/devices/system/cpu/cpufreq/interactive/boost_factor 	
+	chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/input_boost 
+	chown system system /sys/devices/system/cpu/cpufreq/interactive/input_boost 
 
     setprop vold.post_fs_data_done 1
 
