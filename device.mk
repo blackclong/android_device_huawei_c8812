@@ -23,7 +23,6 @@ PRODUCT_PACKAGES += \
 	lights.msm7627a \
     hwcomposer.msm7627a \
     libtilerenderer \
-    libQcomUI \
 	liboverlay \
     libgenlock \
     libmemalloc \
