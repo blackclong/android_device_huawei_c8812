@@ -61,6 +61,6 @@ gfx.highend_override=yes
 #ro.telephony.call_ring.delay=3000
 
 # af controller enable switcher
-ro.config.camera.afctl.enable=true
+#ro.config.camera.afctl.enable=true
 
 keyguard.no_require_sim=true
