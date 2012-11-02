@@ -28,18 +28,6 @@
         <item>usb\\d</item>
         <item>rndis\\d</item>
     </string-array>
-    
-    <!-- Default LED on time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOn">1500</integer>
-
-    <!-- Default LED off time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOff">6000</integer>
-
-    <bool name="config_animateScreenLights">false</bool>
-
-    <!-- The attenuation in dB applied to the sound effects played
-         through AudioManager.playSoundEffect() when no volume is specified. -->
-    <integer name="config_soundEffectVolumeDb">-12</integer>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
@@ -47,6 +35,8 @@
     <string-array translatable="false" name="config_tether_wifi_regexs">
         <item>eth0</item>
     </string-array>
+
+	<bool name="config_animateScreenLights">false</bool>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
@@ -73,10 +63,10 @@
     <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
     <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
     <integer-array translatable="false" name="config_tether_upstream_types">
-        <item>0</item>
-        <item>1</item>
-        <item>4</item>
-        <item>5</item>
+		<item>0</item>
+		<item>1</item>
+		<item>4</item>
+		<item>5</item>
     </integer-array>
 
     <string-array translatable="false" name="radioAttributes">
@@ -86,10 +76,6 @@
     </string-array>
 
     <bool name="config_automatic_brightness_available">true</bool>
-
-<!-- Sets whether menu shortcuts should be displayed on panel menus when
-         a keyboard is present. -->
-    <bool name="config_showMenuShortcutsWhenKeyboardPresent">true</bool>
 
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
@@ -105,15 +91,15 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>160</item>
-        <item>225</item>
-        <item>320</item>
-        <item>640</item>
-        <item>1280</item>
-        <item>2600</item>
-        <item>5800</item>
-        <item>8000</item>
-        <item>10240</item>
+		<item>160</item>
+		<item>225</item>
+		<item>320</item>
+		<item>640</item>
+		<item>1280</item>
+		<item>2600</item>
+		<item>5800</item>
+		<item>8000</item>
+		<item>10240</item>
     </integer-array>
 
 
@@ -122,16 +108,16 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>41</item>
-	<item>55</item>
-        <item>61</item>
-        <item>81</item>
-	<item>100</item>
-        <item>112</item>
-        <item>163</item>
-	<item>198</item>
-        <item>231</item>
-        <item>255</item>
+		<item>41</item>
+		<item>55</item>
+		<item>61</item>
+		<item>81</item>
+		<item>100</item>
+		<item>112</item>
+		<item>163</item>
+		<item>198</item>
+		<item>231</item>
+		<item>255</item>
     </integer-array>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
@@ -139,16 +125,16 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+		<item>255</item>
+		<item>255</item>
+		<item>255</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
     </integer-array>
 
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
@@ -157,16 +143,16 @@
          Passion has no keyboard so all values are zero.
     -->
     <integer-array name="config_autoBrightnessKeyboardBacklightValues">
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+		<item>255</item>
+		<item>255</item>
+		<item>255</item>
+		<item>255</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
     </integer-array>
 
     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
@@ -185,6 +171,4 @@
     <!-- Package name providing geocoder API support. -->
     <string name="config_geocodeProviderPackageName" translatable="false">com.google.android.location</string>
 
-    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">true</bool>
 </resources>
