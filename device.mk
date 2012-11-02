@@ -167,6 +167,7 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/lib/libc2d2_z180.so:system/lib/libc2d2_z180.so
 
 $(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 PRODUCT_NAME := cm_c8812
 PRODUCT_DEVICE := c8812

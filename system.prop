@@ -40,14 +40,6 @@ debug.camcorder.disablemeta=0
 
 persist.sys.usb.config=mass_storage,adb
 
-# System
-dalvik.vm.dexopt-data-only=1
-dalvik.vm.execution-mode=int:jit
-dalvik.vm.heapstartsize=5m
-dalvik.vm.heapgrowthlimit=24m
-dalvik.vm.heapsize=64m
-dalvik.vm.dexopt-flags=m=y,u=n
-
 # Mount the internal SD card, too
 ro.additionalmounts=/mnt/sdcard
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
