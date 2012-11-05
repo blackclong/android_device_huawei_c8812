@@ -100,7 +100,7 @@ BOARD_WLAN_DEVICE := bcmdhd
 WIFI_DRIVER_MODULE_PATH     := "/system/wifi/bcmdhd.ko"
 WIFI_DRIVER_MODULE_NAME     := "bcmdhd"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/wifi/fw_4330_b2.bin nvram_path=/system/wifi/nvram_4330.txt"
-WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/dhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/system/wifi/fw_4330_b2.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/wifi/fw_4330_b2.bin"
 #WIFI_DRIVER_FW_PATH_P2P     := "/system/wifi/fw_4330_b2.bin"
