@@ -108,7 +108,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/init.msm7627a.rc:root/init.msm7627a.rc
 
 PRODUCT_COPY_FILES += \
-	device/huawei/c8812/cfg80211.ko:system/lib/modules/cfg80211.ko \
     device/huawei/c8812/prebuilt/system/wifi/bcmdhd.ko:system/wifi/bcmdhd.ko \
     device/huawei/c8812/prebuilt/system/wifi/fw_4330_b2.bin:system/wifi/fw_4330_b2.bin \
     device/huawei/c8812/prebuilt/system/wifi/nvram_4330.txt:system/wifi/nvram_4330.txt \
