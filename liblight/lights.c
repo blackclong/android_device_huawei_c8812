@@ -28,8 +28,16 @@
 #include <sys/types.h>
 #include <hardware/lights.h>
 
+#include "private/android_filesystem_config.h"
+ #include <sys/wait.h>
+
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
+
+#define TRUE    1
+#define FALSE   0
+static int led_link_status = FALSE;
+static int write_int(char const *path, int value);
 
 char const*const PANEL_FILE = "/sys/class/leds/lcd-backlight/brightness";
 char const*const BUTTON_FILE = "/sys/class/leds/button-backlight/brightness";
@@ -49,8 +57,52 @@ enum {
     LED_BLANK,
 };
 
+struct blink_config {
+    unsigned int RED;    // 255 or 0
+    unsigned int BLUE;
+    unsigned int GREEN;
+    unsigned int onMs;   //led on last time
+    unsigned int offMs;  //led off last time
+};
+static struct blink_config par;
+pthread_t blink;
+
 static struct led_config g_leds[3]; // For battery, notifications, and attention.
 static int g_cur_led = -1;          // Presently showing LED of the above.
+
+void *led_blink(void *arg){
+    while(led_link_status){
+        write_int(RED_LED_FILE, par.RED);
+        write_int(BLUE_LED_FILE, par.BLUE);
+        write_int(GREEN_LED_FILE, par.GREEN);
+        usleep(par.onMs*1000);
+        write_int(RED_LED_FILE, 0);
+        write_int(BLUE_LED_FILE, 0);
+        write_int(GREEN_LED_FILE, 0);
+        usleep(par.offMs*1000);
+    }
+    pthread_exit((void *)0);
+    return 0;
+}
+
+int start_notification(){
+    pthread_mutex_lock(&g_lock);
+    led_link_status = TRUE;
+    if (pthread_create(&blink, NULL, led_blink, NULL) != 0) {
+        ALOGE("Can't start blink thread\n");
+        pthread_mutex_unlock(&g_lock);
+        return -1;
+    }
+    pthread_mutex_unlock(&g_lock);
+    return 0;
+}
+
+int stop_notification(){
+    pthread_mutex_lock(&g_lock);
+    led_link_status = FALSE;
+    pthread_mutex_unlock(&g_lock);
+    return 0;
+}
 
 void init_g_lock(void)
 {
@@ -172,6 +224,31 @@ static int set_light_leds(struct light_state_t const *state, int type)
      *   2. attention
      * which are multiplexed onto the same physical LED in the above order. */
     led = &g_leds[type];
+
+    /*
+    *   for notifications
+    */
+    if(type == 1){
+        pthread_mutex_lock(&g_lock);
+        par.RED = ((state->color >> 16) & 0xFF)? 255 : 0;
+        par.BLUE = ((state->color >> 8) & 0xFF)? 255 : 0;
+        par.GREEN = (state->color & 0xFF)? 255 : 0;
+        par.onMs = state->flashOnMS;
+        par.offMs = state->flashOffMS;
+        pthread_mutex_unlock(&g_lock);
+    
+        //ALOGE("par is\n    RED=%d, BLUE=%d, GREEN=%d\n    onMs=%d, offMs=%d\n", \
+        //    par.RED, par.BLUE, par.GREEN, \
+        //    par.onMs, par.offMs);
+
+        if(state->color > 0){
+            //ALOGE("*********notifications START \n");
+            start_notification();
+        } else {
+            //ALOGE("*********notifications STOP\n");
+            stop_notification();
+        }
+    }
 
     switch (state->flashMode) {
         case LIGHT_FLASH_NONE:
