@@ -65,7 +65,7 @@ struct blink_config {
     unsigned int offMs;  //led off last time
 };
 static struct blink_config par;
-pthread_t blink;
+static pthread_t blink;
 
 static struct led_config g_leds[3]; // For battery, notifications, and attention.
 static int g_cur_led = -1;          // Presently showing LED of the above.
