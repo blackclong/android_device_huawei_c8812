@@ -27,6 +27,7 @@
 #include <sys/ioctl.h>
 #include <sys/types.h>
 #include <hardware/lights.h>
+#include <hardware_legacy/power.h>
 
 #include "private/android_filesystem_config.h"
  #include <sys/wait.h>
@@ -88,6 +89,7 @@ void *led_blink(void *arg){
 int start_notification(){
     pthread_mutex_lock(&g_lock);
     led_link_status = TRUE;
+    acquire_wake_lock(PARTIAL_WAKE_LOCK, "blink_id");
     if (pthread_create(&blink, NULL, led_blink, NULL) != 0) {
         ALOGE("Can't start blink thread\n");
         pthread_mutex_unlock(&g_lock);
@@ -100,6 +102,7 @@ int start_notification(){
 int stop_notification(){
     pthread_mutex_lock(&g_lock);
     led_link_status = FALSE;
+    release_wake_lock("blink_id");
     pthread_mutex_unlock(&g_lock);
     return 0;
 }
