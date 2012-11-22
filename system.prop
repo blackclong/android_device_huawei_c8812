@@ -44,6 +44,7 @@ persist.sys.usb.config=mass_storage,adb
 ro.additionalmounts=/mnt/sdcard
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 ro.emmc.sdcard.partition=19
+ro.vold.umsdirtyratio=20
 
 persist.sys.use_dithering=2
 com.qc.hardware=true
