@@ -36,7 +36,7 @@ media.stagefright.enable-qcp=true
 wifi.interface=eth0
 wifi.supplicant_scan_interval=15
 
-debug.camcorder.disablemeta=0
+debug.camcorder.disablemeta=1
 
 persist.sys.usb.config=mass_storage,adb
 
@@ -50,9 +50,11 @@ persist.sys.use_dithering=2
 com.qc.hardware=true
 gfx.highend_override=yes
 
-#ro.telephony.call_ring.delay=3000
+ro.telephony.call_ring.delay=false
 
 # af controller enable switcher
-#ro.config.camera.afctl.enable=true
+ro.config.camera.afctl.enable=true
 
 keyguard.no_require_sim=true
+
+debug.sf.electron_frames=16
