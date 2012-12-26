@@ -124,7 +124,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/c8812/prebuilt/system/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/huawei/c8812/prebuilt/system/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/c8812/prebuilt/system/etc/AudioFilter_MSM7627A_C8812.csv:system/etc/AudioFilter_MSM7627A_C8812.csv \
     device/huawei/c8812/prebuilt/system/etc/init.qcom.composition_type.sh:system/etc/init.qcom.composition_type.sh \
     device/huawei/c8812/prebuilt/system/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     device/huawei/c8812/prebuilt/system/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
