@@ -49,7 +49,8 @@ ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 ro.emmc.sdcard.partition=19
 ro.vold.umsdirtyratio=20
 
-persist.sys.use_dithering=2
+persist.sys.use_dithering=1
+debug.composition.type=mdp
 com.qc.hardware=true
 gfx.highend_override=yes
 
