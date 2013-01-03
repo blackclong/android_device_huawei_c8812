@@ -1,5 +1,5 @@
 
-#inherit from the common tamsui definitions
+#inherit from the common msm7x27a definitions
 -include device/huawei/msm7x27a-common/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := c8812
