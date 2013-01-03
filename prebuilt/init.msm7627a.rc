@@ -1,3 +1,0 @@
-on emmc-fs
-# mount mmc partitions
-    write /sys/module/block2mtd/parameters/block2mtd /dev/block/mmcblk0p17
