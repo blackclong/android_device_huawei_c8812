@@ -1,10 +1,9 @@
-
 #inherit from the common msm7x27a definitions
 -include device/huawei/msm7x27a-common/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := c8812
 TARGET_OTA_ASSERT_DEVICE := c8812,C8812,hwc8812,msm7627a
-
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/huawei/c8812/releasetools/ota_from_target_files
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00C00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00C00000
